@@ -1,32 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Movies</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-<nav>
-    <ul>
-        <li>
-            <a href="allMovies.php">Display Movies</a>
-        </li>
-        <li>
-            <a href="allMoviesPlus.php">Display Movies Plus IDs</a>
-        </li>
-        <li>
-            <a href="moviesByMarvel.php">Display Movies By Marvel</a>
-        </li>
-        <li>
-            <a href="moviesAfter2010.php">Movies After 2010</a>
-        </li>
-        <li>
-            <a href="xmenMovies.php"> X-men Movies</a>
-        </li>
-    </ul>
-</nav>
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Uche
+ * Date: 023, 23 Apr 2016
+ * Time: 15:16
+ */
+include('server.php');
+$sql = "SELECT yearReleased, title, productionStudio, notes 
+        FROM marvelmovies WHERE productionStudio = 'Marvel Studios'";
+$result = mysqli_query($conn,$sql);//procedural programming
+echo "
+<table>
+<tr>
+<th>Year Released</th>
+<th>Title</th>
+<th>Production Studio</th>
+<th>Notes</th>
+</tr> ";
 
+if(mysqli_num_rows($result)>0){
+    while($row = mysqli_fetch_assoc($result)){
+        echo "<tr>
+        <td>{$row['yearReleased']}</td>
+        <td>{$row['title']}</td>
+        <td>{$row['productionStudio']}</td>
+        <td>{$row['notes']}</td>
+            </tr>";
+    }
+}
+echo "</table>";
 
-
-</body>
-</html>
+//$res= $conn->query($sql);//object oriented programming
