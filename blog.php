@@ -40,11 +40,11 @@
     <div class="nav">
         <nav>
             <ul>
-                <li><a href="blog.html">All Blog Items</a></li>
-                <li><a href="work.html">Work Items</a></li>
-                <li><a href="university.html">University Items</a></li>
-                <li><a href="family.html">Family Items</a></li>
-                <li><a href="add.html">Insert a Blog Item</a></li>
+                <li><a href="blog.php?category=all">All Blog Items</a></li>
+                <li><a href="blog.php?category=work">Work Items</a></li>
+                <li><a href="blog.php?category=university">University Items</a></li>
+                <li><a href="blog.php?category=family">Family Items</a></li>
+                <li><a href="add.php">Insert a Blog Item</a></li>
             </ul>
         </nav>
     </div>
@@ -56,7 +56,7 @@
         include('connect.php');
         if(isset($_GET['category']) && $_GET['category'] == 'all') {
             $sql = "SELECT entryTitle, category, submitter, entrySummary
-            FROM blogView ";
+            FROM blogview ";
             $result = mysqli_query($db,$sql);
             echo "
             <table>
