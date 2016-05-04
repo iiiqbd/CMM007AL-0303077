@@ -12,7 +12,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Show Blog Entry</title>
+    <title><? include('db_conn.php');
+        echo $_GET['bugCategory']; ?></title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/unsemantic-grid-responsive-tablet.css">
     <meta
@@ -53,7 +54,7 @@
     <div class="article">
 
         <?php
-        include('connect.php');
+        include('db_conn.php');
         if(isset($_GET['category'])) {
             $category = $_GET['category'];
             $sql_query = "SELECT * FROM blogview where category = '$category'";
@@ -81,7 +82,7 @@
             echo "</table>";
         } else {
 
-            $sql = "SELECT *  FROM bugs";
+            $sql = "SELECT * FROM blogview";
             $result = mysqli_query($conn,$sql);
             echo "
     <table>
