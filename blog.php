@@ -57,7 +57,7 @@
         include('db_conn.php');
         if(isset($_GET['category'])) {
             $category = $_GET['category'];
-            $sql_query = "SELECT * FROM blogview where category = 'all'";
+            $sql_query = "SELECT * FROM blogview where category = '$category'";
             $result = $conn->query($sql_query);
             echo "
         <table>
