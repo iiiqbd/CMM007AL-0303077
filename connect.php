@@ -14,7 +14,7 @@ define('DB','CMM007ALDB-0303077');
 $conn = mysqli_connect(SERVER,USER,PASSWORD,DB);
 
 if ($conn){
-    echo "The Database is online!";
+    echo ""; /*  The Database is online! - connect test string */
 }else{
     echo "Error".mysqli_error($conn);
 }

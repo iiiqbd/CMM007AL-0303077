@@ -54,22 +54,45 @@
 
         <?php
         include('connect.php');
-        if(isset($_GET['category']) && $_GET['category'] == 'all') {
-            $sql = "SELECT entryTitle, category, submitter, entrySummary
-            FROM blogview ";
-            $result = mysqli_query($db,$sql);
+        if(isset($_GET['category'])) {
+            $category = $_GET['category'];
+            $sql_query = "SELECT * FROM blogview where category = '$category'";
+            $result = $conn->query($sql_query);
             echo "
-            <table>
-                <tr>
+        <table>
+            <tr>
                     <th>Entry Title </th>
                     <th>Category</th>
                     <th>Submitted By</th>
                     <th>Entry Summary</th>
+            </tr> ";
 
-                </tr> ";
+            if(mysqli_num_rows($result)>0){
+                while($row = $result->fetch_array()){
+                    echo
+                        "<tr>
+                            <td>".$row['entryTitle']."</td>
+                            <td>".$row['category']."</td>
+                            <td>".$row['submitter']."</td>
+                            <td>".$row['entrySummary']."</td>
+                        </tr>";
+                }
+            }
+            echo "</table>";
+        } else {
+
+            $sql = "SELECT *  FROM bugs";
+            $result = mysqli_query($conn,$sql);
+            echo "
+    <table>
+        <tr>
+            <th>Entry Title </th>
+            <th>Category</th>
+            <th>Submitted By</th>
+            <th>Entry Summary</th>
+        </tr> ";
 
             if(mysqli_num_rows($result) > 0){
-
                 while($row = mysqli_fetch_assoc($result)){
                     echo
                         "<tr>
@@ -77,96 +100,12 @@
                             <td>".$row['category']."</td>
                             <td>".$row['submitter']."</td>
                             <td>".$row['entrySummary']."</td>
-
                         </tr>";
                 }
             }
             echo "</table>";
-        } elseif (isset($_GET['category']) && $_GET['category'] == 'work'){
-            $sql = "SELECT entryTitle, category, submitter, entrySummary
-            FROM blogView WHERE category = 'work'";
-            $result = mysqli_query($db,$sql);
-            echo "
-            <table>
-                <tr>
-                    <th>Entry Title </th>
-                    <th>Category</th>
-                    <th>Submitted By</th>
-                    <th>Entry Summary</th>
 
-                </tr> ";
-
-            if(mysqli_num_rows($result)>0){
-
-                while($row = mysqli_fetch_assoc($result)){
-                    echo "<tr>
-                        <td>".$row['entryTitle']."</td>
-                        <td>".$row['category']."</td>
-                        <td>".$row['submitter']."</td>
-                        <td>".$row['entrySummary']."</td>
-
-                </tr>";
-                }
-            }
-            echo "</table>";
-        } elseif (isset($_GET['category']) && $_GET['category'] == 'university'){
-            $sql = "SELECT entryTitle, category, submitter, entrySummary
-            FROM blogView WHERE category = 'university'";
-            $result = mysqli_query($db,$sql);
-            echo "
-            <table>
-                <tr>
-                    <th>Entry Title </th>
-                    <th>Category</th>
-                    <th>Submitted By</th>
-                    <th>Entry Summary</th>
-
-                </tr> ";
-
-            if(mysqli_num_rows($result)>0){
-
-                while($row = mysqli_fetch_assoc($result)){
-                    echo "<tr>
-                        <td>".$row['entryTitle']."</td>
-                        <td>".$row['category']."</td>
-                        <td>".$row['submitter']."</td>
-                        <td>".$row['entrySummary']."</td>
-                </tr>";
-                }
-            }
-            echo "</table>";
-        }elseif(isset($_GET['category']) && $_GET['category'] == 'family'){
-            $sql = "SELECT entryTitle, category, submitter, entrySummary
-            FROM blogView WHERE category = 'family'";
-            $result = mysqli_query($db,$sql);
-            echo "
-            <table>
-                <tr>
-                    <th>Entry Title </th>
-                    <th>Category</th>
-                    <th>Submitted By</th>
-                    <th>Entry Summary</th>
-                </tr> ";
-
-            if(mysqli_num_rows($result)>0){
-
-                while($row = mysqli_fetch_assoc($result)){
-                    echo "<tr>
-                        <td>".$row['entryTitle']."</td>
-                        <td>".$row['category']."</td>
-                        <td>".$row['submitter']."</td>
-                        <td>".$row['entrySummary']."</td>
-
-                </tr>";
-                }
-            }
-            echo "</table>";
         }
-
-
-
-
-
         ?>
 
 
