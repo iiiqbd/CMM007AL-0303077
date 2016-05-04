@@ -1,0 +1,78 @@
+
+*{
+    /* removes all browser default paddings, margins and borders */
+    padding: 0;
+    border: 0;
+    margin: 0;
+
+}
+
+body{
+    font-family: sans-serif;
+    font-size: 14px;
+    width: 600px;
+    margin: auto;
+}
+
+#logo{
+    height: 300px;
+    width: 300px;
+    float: right;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    margin-right: 10px;
+}
+header{
+    height: 100px;
+    background-color: oldlace;
+    margin-bottom: 2px;
+}
+.header{
+    padding-left: 10px;
+    margin-left: 10px;
+    padding-top: 10px;
+}
+
+.nav{
+    min-width: 22%;
+    float: left;
+    height: 200px;
+    padding: 2px;
+    background-color: antiquewhite;
+    margin-bottom: 2px;
+    border: solid;
+    border-color: blue;
+
+}
+
+.article{
+    max-width: 68.5%;
+    float: right;
+    background-color: cyan;
+    text-align: justify;
+    padding: 20px;
+    margin-bottom: 2px;
+    border: solid;
+    border-color: azure;
+    padding-bottom: 81px;
+    height: auto;
+
+}
+
+footer{
+    clear: both;
+    text-align: center;
+    height: 60px;
+    background-color: #999999;
+    margin-top: 2px;
+}
+
+li{
+    list-style: none;
+    padding: 10px;
+}
+
+ li a{
+    text-decoration: none;
+}

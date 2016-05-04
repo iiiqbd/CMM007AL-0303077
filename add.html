@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog Entry Page</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/unsemantic-grid-responsive-tablet.css">
+    <meta
+            name="viewport"
+            content="
+        width=device-width,
+        initial-scale=1,
+        minimum-scale=1,
+        maximum-scale=1"
+            />
+</head>
+<body>
+<!--Header section starts here-->
+<header>
+
+    <div class="header">
+        <h2>myBlog</h2>
+        <p>because the internet needs to know what I think</p>
+        <p></p>
+    </div>
+</header>
+<!--Header section ends here-->
+
+<!--Main section starts here-->
+<main>
+
+    <div class="nav">
+        <nav>
+            <ul>
+                <li><a href="blog.html">All Blog Items</a></li>
+                <li><a href="work.html">Work Blog Items</a></li>
+                <li><a href="university.html">University Blog Items</a></li>
+                <li><a href="family.html">Family Blog Items</a></li>
+                <li><a href="add.html">Insert Blog Items</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="form">  <!-- -->
+        <form action="" method="post">
+            <label for="entry">Entry Title</label>
+                <input type="text" name="entry" id="entry" required/>
+            <br><br>
+            <label for="summary">Entry Summary</label>
+                <textarea id="summary" cols="50px" rows="5px" required></textarea>
+            <br><br>
+            <label for="category">Category</label>
+            <select id="category" name="submitted" required>
+                <option value="">Select Blog Category</option>
+                <option value="work">Work</option>
+                <option value="university">University</option>
+                <option value="family">Family</option>
+            </select>
+            <label for="submittedby">Category</label>
+            <input type="text" name="submittedby" id="submittedby" value="Submitted By"/>
+            <br><br>
+                <input type="submit" value="submit" required/>
+        </form>
+    </div>
+</main>
+<!--Main section ends here-->
+
+<!--Footer section starts here-->
+<footer>
+    <p>&copy; Designed by Uchechi Adiele, 2016</p>
+</footer>
+<!--Footer section ends here-->
+</body>
+</html>
