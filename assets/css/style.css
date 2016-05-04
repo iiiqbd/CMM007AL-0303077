@@ -50,7 +50,7 @@ header{
 .article{
     max-width: 68.5%;
     float: right;
-    background-color: cyan;
+    background-color: #999999;
     text-align: justify;
     padding: 20px;
     margin-bottom: 2px;
