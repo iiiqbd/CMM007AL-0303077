@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Work Blog Item</title>
+    <title>My Blog</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/unsemantic-grid-responsive-tablet.css">
     <meta
-            name="viewport"
-            content="
+        name="viewport"
+        content="
         width=device-width,
         initial-scale=1,
         minimum-scale=1,
         maximum-scale=1"
-            />
+        />
 </head>
 <body>
 <!--Header section starts here-->
@@ -30,11 +30,11 @@
     <div class="nav">
         <nav>
             <ul>
-                <li><a href="blog.html">All Blog Items</a></li>
-                <li><a href="work.html">Work Items</a></li>
-                <li><a href="university.html">University Items</a></li>
-                <li><a href="family.html">Family Items</a></li>
-                <li><a href="add.html">Insert a Blog Item</a></li>
+                <li><a href="blog.php?category=all">All Blog Items</a></li>
+                <li><a href="blog.php?category=work">Work Items</a></li>
+                <li><a href="blog.php?category=university">University Items</a></li>
+                <li><a href="blog.php?category=family">Family Items</a></li>
+                <li><a href="add.php">Insert a Blog Item</a></li>
             </ul>
         </nav>
     </div>
