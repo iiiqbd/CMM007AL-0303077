@@ -82,7 +82,7 @@
             echo "</table>";
 
         } else {
-            $sql_query = "SELECT * FROM blogview";
+            $sql = "SELECT * FROM blogview";
             $result = mysqli_query($conn,$sql);
             echo "
     <table>
