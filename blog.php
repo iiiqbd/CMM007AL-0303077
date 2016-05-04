@@ -13,7 +13,7 @@
 <head>
     <meta charset="UTF-8">
     <title><? include('db_conn.php');
-        echo $_GET['bugCategory']; ?></title>
+        echo $_GET['category']; ?></title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/unsemantic-grid-responsive-tablet.css">
     <meta
