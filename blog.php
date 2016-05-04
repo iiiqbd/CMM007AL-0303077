@@ -41,7 +41,7 @@
     <div class="nav">
         <nav>
             <ul>
-                <li><a href="blog.php?category=all">All Blog Items</a></li>
+                <li><a href="blog.php">All Blog Items</a></li>
                 <li><a href="blog.php?category=work">Work Items</a></li>
                 <li><a href="blog.php?category=university">University Items</a></li>
                 <li><a href="blog.php?category=family">Family Items</a></li>
