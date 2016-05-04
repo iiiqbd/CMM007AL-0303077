@@ -81,9 +81,8 @@
             }
             echo "</table>";
 
-        } elseif (isset($_GET['category'])) {
-            $category = $_GET['category'];
-            $sql_query = "SELECT * FROM blogview where category = '$category'";
+        } else {
+            $sql_query = "SELECT * FROM blogview";
             $result = mysqli_query($conn,$sql);
             echo "
     <table>
